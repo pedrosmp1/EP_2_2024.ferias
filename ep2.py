@@ -44,3 +44,15 @@ def posiciona_frota(frota):
         for coord in navio['posicoes']:
             grid[coord[0]][coord[1]]=1
     return grid
+
+
+def afundados(frota,tabuleiro):
+    soma=0
+    for navio in frota:
+        afundado=True
+        for coord in navio['posicoes']:
+            if tabuleiro[coord[0]][coord[1]]!='X':
+                afundado=False
+        if afundado:
+            soma+=1
+    return soma
