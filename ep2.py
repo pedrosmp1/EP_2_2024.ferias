@@ -56,3 +56,15 @@ def afundados(frota,tabuleiro):
         if afundado:
             soma+=1
     return soma
+
+
+def posicao_valida(dados,frota):
+    pos_desejada=define_posicoes(dados)
+    for coord1 in pos_desejada:
+        if coord1[0]>9 or coord1[0]<-1 or coord1[1]>9 or coord1[1]<-1:
+                return False
+    for navio in frota:
+        for coord in navio['posicoes']:
+            if coord in pos_desejada:
+                return False
+    return True
