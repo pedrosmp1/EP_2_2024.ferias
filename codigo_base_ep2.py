@@ -28,7 +28,7 @@ while jogando:
             print('Coluna inválida!')
             coluna=int(input('coluna?'))
         if tabuleiro_oponente[linha][coluna]=='X' or tabuleiro_oponente[linha][coluna]=='-':
-            print('A posição linha X e coluna Y já foi informada anteriormente!')
+            print(f'A posição linha {linha} e coluna {coluna} já foi informada anteriormente!')
         else:
             valido=True
         
