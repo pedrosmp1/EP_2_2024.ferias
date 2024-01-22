@@ -68,3 +68,4 @@ def posicao_valida(dados,frota):
             if coord in pos_desejada:
                 return False
     return True
+
