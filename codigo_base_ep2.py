@@ -180,12 +180,27 @@ while jogando:
             valido=True
         
         
-
-
     tabuleiro_oponente= faz_jogada(tabuleiro_oponente,linha,coluna)
    
-
     # TODO: Implemente aqui a lógica para verificar se o jogador derrubou todos os navios do oponente
     if afundados(frota_oponente,tabuleiro_oponente)==len(frota_oponente):
         print('Parabéns! Você derrubou todos os navios do seu oponente!')
         jogando=False
+        break
+
+    linhaop=random.randint(0,9)
+    colunaop=random.randint(0,9)
+    while tabuleiro_oponente[linhaop][colunaop]=='X' or tabuleiro_oponente[linhaop][colunaop]=='-':
+        print('A posição linha X e coluna Y já foi informada anteriormente!')
+        linhaop=random.randint(0,9)
+        colunaop=random.randint(0,9)
+    tabuleiro_jogador= faz_jogada(tabuleiro_jogador,linhaop,colunaop)
+    if afundados(frota_jogador,tabuleiro_jogador)==len(frota_jogador):
+        print('Xi! O oponente derrubou toda a sua frota =(')
+        jogando=False
+        break
+
+
+
+    
+
